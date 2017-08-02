@@ -1,5 +1,529 @@
+/*
+  COLORS
+
+  $green: #00796b; -> lighten: #329388 -> darken: #00463e
+*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media (min-width: 400px) {
+  html {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 35px;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 37px;
+    line-height: 43px;
+  }
+}
+
+h2 {
+  font-size: 26px;
+  line-height: 30px;
+}
+
+@media (min-width: 800px) {
+  h2 {
+    font-size: 31px;
+    line-height: 36px;
+  }
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 25px;
+}
+@media (min-width: 800px) {
+  h3 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* --------------------------
+  Input Placeholder STYLES
+--------------------------- */
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #00796b;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #00796b;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #00796b;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #00796b;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #00796b;
+}
+
+
+/* --------------------------
+      Navigation STYLES
+--------------------------- */
+
+.main-nav {
+  background: linear-gradient(#00796b, #006055);
+  display: flex;
+  font-size: 1.2em;
+  height: 7vh;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  display: flex;
+  flex: 1;
+  text-align: center;
+}
+
+.main-nav a {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-basis: 100%;
+  text-decoration: none;
+  transition: all .3s ease-in;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  background: #329388;
+  text-shadow: 3px 3px 3px black;
+}
+
+.main-nav a > * {
+  display: block;
+  width: 100%;
+}
+
+/* --------------------------
+         MAP STYLES
+--------------------------- */
+
+.mapboxgl-map {
+  position: relative;
+  height: 93vh;
+  width: 100%;
+}
+
+/* --------------------------
+    LayerSwitcher STYLES
+--------------------------- */
+
+.layer-switcher {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  bottom: 1em;
+  left: 1em;
+  list-style: none;
+  opacity: .9;
+  position: fixed;
+  padding: 1em;
+  z-index: 1;
+}
+
+/* --------------------------
+    Autocomplete STYLES
+-------------------------- */
+
+.autocomplete {
+  position: absolute;
+  top: 1em;
+  width: 100%;
+  z-index: 5;
+}
+
+.autocomplete input {
+  border: 3px solid #00796b;
+  color: #00796b;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  margin: auto;
+  padding: .5em;
+  width: 90%;
+}
+
+.autocomplete .results-list {
+  background: white;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 3px solid #00796b;
+  border-top: 0;
+  display: none;
+  list-style: none;
+  margin: 0;
+  max-height: 80vh;
+  overflow: scroll;
+  padding: 0;
+  width: 90%;
+}
+
+.autocomplete .results-list li {
+  padding: .25em;
+}
+
+.autocomplete .results-list.active {
+  display: block;
+  margin: auto;
+}
+
+.autocomplete .results-list:empty {
+  display: none;
+}
+
+.autocomplete .results-list button {
+  background: white;
+  border: 0;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.autocomplete .results-list button:focus,
+.autocomplete .results-list button:hover {
+  background: #00796b;
+  color: white;
+}
+
+@media (min-width: 700px) {
+  .autocomplete {
+    left: 1em;
+    max-width: 300px;
+  }
+
+  .autocomplete input,
+  .autocomplete .results-list {
+    width: 100%;
+  }
+}
+
+
+/* --------------------------
+      ListView STYLES
+-------------------------- */
+
+.list-view-container {
+  border-radius: 5px;
+  border: 3px solid #00796b;
+  margin: 1em;
+  max-width: 800px;
+  padding: 2em;
+}
+
+@media(min-width: 700px) {
+  .list-view-container {
+    margin: 1em auto;
+  }
+}
+
+.list-view-container input {
+  border-radius: 3px;
+  border: 3px solid #00796b;
+  font-size: 1em;
+  margin: 1em auto 2em;
+  padding: .5em;
+  width: 100%;
+}
+
+.offices-list {
+  list-style: none;
+  padding: 0;
+}
+
+.offices-list li {
+  padding: 2em 0;
+}
+
+@media(min-width: 800px) {
+  .offices-list li {
+    display: flex;
+  }
+
+  .offices-list svg {
+    flex: 1;
+    float: none;
+  }
+
+  .offices-list h3 {
+    margin-top: 0;
+  }
+
+  .office-info {
+    flex: 4;
+  }
+}
+
+.offices-list svg {
+  float: right;
+}
+
+/* --------------------------
+      Sidebar STYLES
+-------------------------- */
+
+.sidebar {
+  background: white;
+  height: 93vh;
+  left: 0;
+  padding-top: 50px;
+  position: fixed;
+  top: 7vh;
+  transform: translateX(-100%);
+  transition: transform .5s cubic-bezier(1,-0.22, 0, 1.15);
+  width: 100%;
+  z-index: 4;
+}
+
+.sidebar.active {
+  transform: translateX(0%);
+}
+
+.content-detail {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  overflow-y: scroll;
+  top: 100px;
+  width: 100%;
+}
+
+.content-detail h2,
+.content-detail h3 {
+  background: #00796b;
+  color: white;
+  margin: -6px 0 0;
+  padding: .25em;
+  text-align: center;
+}
+
+.content-detail svg {
+  width: 50px;
+}
+
+.content-detail p {
+  padding: 0 3%;
+}
+
+.content-detail address {
+  padding: 3%;
+}
+
+.sidebar .detail-image {
+  width: 100%;
+}
+
+.sidebar .detail-links {
+  border-bottom: 1px solid #e6e6e6;
+  list-style: none;
+  margin: 0;
+  padding: .5em;
+  text-align: center;
+}
+
+.detail-links li {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.detail-links a {
+  color: #00796b;
+  display: block;
+  text-decoration: none;
+}
+
+.detail-links svg {
+  height: 30px;
+  fill: #00796b;
+  width: 30px;
+}
+
+.detail-links span {
+  display: block;
+  font-size: .8em;
+}
+
+@media(min-width: 700px) {
+  .sidebar {
+    width: 350px;
+  }
+}
+
+/* ---------------------------
+ Sidebar View Switcher STYLES
+---------------------------- */
+
+.sidebar-view-switcher {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.sidebar-view-switcher li {
+  display: flex;
+  flex: 1;
+  height: 50px;
+}
+
+.sidebar-view-switcher button {
+  background: #00796b;
+  border: none;
+  color: white;
+  display: block;
+  width: 100%;
+}
+
+.sidebar-view-switcher button:hover {
+  background: #00463e;
+  cursor: pointer;
+}
+
+/* --------------------------
+ Nearest offices list STYLES
+-------------------------- */
+
+.nearest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nearest-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .5em;
+  text-align: left;
+  width: 100%;
+}
+
+.nearest-item button:hover,
+.nearest-item button:focus {
+  background: #00796b;
+  color: white;
+}
+
+/* --------------------------
+      Sidecar STYLES
+-------------------------- */
+
+.sidecar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 401;
+}
+
+.sidecar li:first-child .sidecar-link {
+  border-top-left-radius: 5px;
+}
+
+.sidecar li:last-child .sidecar-link {
+  border-bottom-left-radius: 5px;
+}
+
+.sidecar-link {
+  background: #00796b;
+  border: 0;
+  clear: both;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 8px;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.sidecar-link:hover {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.sidecar-link:hover .sidecar-label {
+  max-width: 200px;
+}
+
+.sidecar-link:hover .icon {
+  margin-left: .5em;
+}
+
+.sidecar-label {
+  display: block;
+  float: left;
+  line-height: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 0;
+  text-overflow: ellipsis;
+  transition: all .3s;
+}
+
+.sidecar svg.icon {
+  fill: white;
+  height: 25px;
+  width: 25px;
+}
+
+.geolocate-icon.loading {
+  animation: rotate 1.5s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.about-view {
+  margin: auto;
+  max-width: 800px;
 }
