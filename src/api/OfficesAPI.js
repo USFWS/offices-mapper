@@ -1,6 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 import distance from '@turf/distance';
-import sphereKnn from 'sphere-knn';
+import sphereKnn from '../vendor/sphere-knn';
 
 const createPoint = coords => {
   return {
