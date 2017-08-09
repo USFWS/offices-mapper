@@ -6,6 +6,9 @@
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-preset-latest": "^6.24.1",
+    "chalk": "^2.0.1",
+    "ncp": "^2.0.0",
+    "object.entries": "^1.0.4",
     "react-scripts": "1.0.10",
     "redux-devtools-extension": "^2.13.2",
     "redux-immutable-state-invariant": "^2.0.0"
@@ -27,6 +30,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "npm run deploy",
+    "deploy": "node deploy",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build:dependencies": "babel node_modules/sphere-knn --out-dir src/vendor/sphere-knn"
