@@ -24,7 +24,7 @@ const Links = ({ office }) => {
         let Component = components[type];
         return (
           <li key={i}>
-            <a href={office[type]}>
+            <a href={office[type]} target="_blank">
               <Component /><span>{titleCase(type)}</span>
             </a>
           </li>
