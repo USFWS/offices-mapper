@@ -10,11 +10,13 @@ const ContentSwitcher = props => {
     props.changeView(viewName);
   }
 
+  const currentOffice = props.currentOffice ? <li><button onClick={onClick} data-view='current-office'>Current Office</button></li> : '';
+
   return (
     <ul className='sidebar-view-switcher'>
       <li><button onClick={onClick} data-view='how-to'>Help</button></li>
-      <li><button onClick={onClick} data-view='current-office'>Current Office</button></li>
-      <li><button onClick={onClick} data-view='nearest-offices'>Nearest Offices</button></li>
+      {currentOffice}
+      <li><button onClick={onClick} data-view='nearest-offices'>Nearby Offices</button></li>
     </ul>
   );
 };
