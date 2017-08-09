@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getCurrentOffice } from '../../api/OfficesAPI';
-import { selectOffice } from '../../actions/offices';
+import { selectOffice, nearestOffices } from '../../actions/offices';
 import { changeView } from '../../actions/sidebar';
 
 import HowTo from './HowTo';
@@ -15,7 +15,11 @@ const Sidebar = props => {
       case 'how-to':
         return <HowTo />
       case 'nearest-offices':
-        return <NearestOffices offices={props.offices} selectOffice={props.selectOffice} />
+        return <NearestOffices
+          offices={props.offices}
+          selectOffice={props.selectOffice}
+          selectNearestOffices={props.selectNearestOffices}
+        />
       case 'current-office':
         return <CurrentOffice office={props.currentOffice.properties} />
       default:
@@ -25,7 +29,7 @@ const Sidebar = props => {
 
   return (
     <aside className='sidebar active'>
-      <ContentSwitcher changeView={props.changeView}/>
+      <ContentSwitcher changeView={props.changeView} currentOffice={props.currentOffice}/>
       { viewPicker(props.view) }
     </aside>
   )
@@ -41,6 +45,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    selectNearestOffices: offices => dispatch(nearestOffices(offices)),
     selectOffice: office => dispatch(selectOffice(office)),
     changeView: view => dispatch(changeView(view))
   }
