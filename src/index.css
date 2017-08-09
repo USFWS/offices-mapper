@@ -170,7 +170,7 @@ img {
 
 .autocomplete {
   position: absolute;
-  top: 1em;
+  top: .5em;
   width: 100%;
   z-index: 5;
 }
@@ -179,11 +179,12 @@ img {
   border: 3px solid #00796b;
   color: #00796b;
   display: block;
-  font-size: 1em;
+  font-size: 14px;
   font-weight: bold;
+  line-height: 18px;
   margin: auto;
   padding: .5em;
-  width: 90%;
+  width: 100%;
 }
 
 .autocomplete .results-list {
@@ -220,6 +221,8 @@ img {
   border: 0;
   color: #00796b;
   display: block;
+  font-size: 14px;
+  line-height: 18px;
   width: 100%;
   text-align: left;
 }
@@ -335,6 +338,8 @@ img {
 .content-detail {
   bottom: 0;
   left: 0;
+  font-size: 16px;
+  line-height: 22px;
   position: absolute;
   overflow-y: scroll;
   top: 100px;
@@ -345,7 +350,7 @@ img {
 .content-detail h3 {
   background: #00796b;
   color: white;
-  margin: -6px 0 0;
+  margin: -7px 0 0;
   padding: .25em;
   text-align: center;
 }
@@ -427,6 +432,8 @@ img {
   border: none;
   color: white;
   display: block;
+  font-size: 16px;
+  line-height: 20px;
   width: 100%;
 }
 
@@ -440,19 +447,75 @@ img {
  Nearest offices list STYLES
 -------------------------- */
 
+.nearest-offices-search-button {
+  align-items: center;
+  background: #00796b;
+  border: none;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  margin: 1em auto;
+  padding: .5em;
+}
+
+.nearest-offices-search-button svg {
+  fill: white;
+  flex: 1;
+  height: 50px;
+}
+
+.nearest-offices-search-button span {
+  flex: 3;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 10px;
+}
+
 .nearest-list {
+  bottom: 0;
+  left: 0;
   list-style: none;
   margin: 0;
   padding: 0;
+  position: absolute;
+  overflow-y: scroll;
+  top: 100px;
+  width: 100%;
+}
+
+.nearest-item {
+  border-bottom: 1px solid rgba(205, 205, 205, .6);
 }
 
 .nearest-item button {
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  line-height: 18px;
   padding: .5em;
   text-align: left;
   width: 100%;
+}
+
+.nearest-item svg {
+  margin-bottom: .5em;
+  max-height: 60px;
+  max-width: 60px;
+}
+
+.nearest-item .icon-and-mileage {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.nearest-item-name {
+  flex: 3;
 }
 
 .nearest-item button:hover,
@@ -460,6 +523,11 @@ img {
   background: #00796b;
   color: white;
 }
+
+/*.nearest-item button:hover svg,
+.nearest-item button:focus svg {
+  fill: white;
+}*/
 
 /* --------------------------
       Sidecar STYLES
@@ -544,4 +612,5 @@ img {
 .about-view {
   margin: auto;
   max-width: 800px;
+  padding: 3%;
 }
