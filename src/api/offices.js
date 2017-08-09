@@ -1379,8 +1379,8 @@ export default {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.858444,
-          36.440392999098115
+          -75.861909,
+          36.467770
         ]
       }
     },
