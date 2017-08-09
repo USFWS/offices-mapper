@@ -90,7 +90,7 @@ export const selectNearest = (offices, nearest) => offices.map(o => {
   if (nearestOffice)
     return {...o, properties: {...o.properties, nearest: nearestOffice.distance, display: true} };
   else
-    return {...o, properties: {...o.properties, display: false}};
+    return {...o, properties: {...o.properties, display: false, nearest: false}};
 });
 
 export const getNearestOffices = offices => offices.filter(o => o.properties.nearest);
