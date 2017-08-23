@@ -29,7 +29,7 @@ const Sidebar = props => {
 
   return (
     <aside className='sidebar active'>
-      <ContentSwitcher changeView={props.changeView} currentOffice={props.currentOffice}/>
+      <ContentSwitcher view={props.view} changeView={props.changeView} currentOffice={props.currentOffice}/>
       { viewPicker(props.view) }
     </aside>
   )
