@@ -8,15 +8,29 @@ const ContentSwitcher = props => {
   const onClick = e => {
     const viewName = e.target.getAttribute('data-view');
     props.changeView(viewName);
-  }
+  };
 
-  const currentOffice = props.currentOffice ? <li><button onClick={onClick} data-view='current-office'>Current Office</button></li> : '';
+  const currentOffice = props.currentOffice
+    ? <li className={props.view === 'current-office' ? 'active' : ''}>
+        <button onClick={onClick} data-view="current-office">
+          Current Office
+        </button>
+      </li>
+    : '';
 
   return (
-    <ul className='sidebar-view-switcher'>
-      <li><button onClick={onClick} data-view='how-to'>Help</button></li>
+    <ul className="sidebar-view-switcher">
+      <li className={props.view === 'how-to' ? 'active' : ''}>
+        <button onClick={onClick} data-view="how-to">
+          Help
+        </button>
+      </li>
       {currentOffice}
-      <li><button onClick={onClick} data-view='nearest-offices'>Nearby Offices</button></li>
+      <li className={props.view === 'nearest-offices' ? 'active' : ''}>
+        <button onClick={onClick} data-view="nearest-offices">
+          Nearby Offices
+        </button>
+      </li>
     </ul>
   );
 };
