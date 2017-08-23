@@ -1682,7 +1682,7 @@ export default {
         "name": "Eufaula National Wildlife Refuge",
         "type": "National Wildlife Refuge",
         "program": "National Wildlife Refuge System",
-        "address": "367highway 165",
+        "address": "367 highway 165",
         "city": "Eufaula",
         "state": "Alabama",
         "zip": "36027",
