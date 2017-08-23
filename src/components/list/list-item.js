@@ -28,7 +28,7 @@ const ListItem = props => {
           { props.office.properties.address } <br />
           { props.office.properties.city }, { props.office.properties.state } <br/>
         </address>
-        <p>{props.office.properties.narrative}</p>
+        <p dangerouslySetInnerHTML={{ __html: props.office.properties.narrative }}></p>
       </div>
     </li>
   );
