@@ -4,7 +4,7 @@ import Links from './Links';
 
 const CurrentOffice = ({ office }) => {
   const buildImageUrl = name =>
-    `https://usfws.github.io/southeast-mega-map/images/${name}`;
+    `https://fws.gov/southeast/images/pages/${name}`;
   return (
     <div className="content-detail">
       {office.image
