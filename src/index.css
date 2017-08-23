@@ -427,6 +427,10 @@ img {
   height: 50px;
 }
 
+.sidebar-view-switcher .active button {
+  background: #00463e;
+}
+
 .sidebar-view-switcher button {
   background: #00796b;
   border: none;
