@@ -1,7 +1,7 @@
 import React from 'react';
 import queryString from 'query-string';
 import { render } from 'react-dom';
-import { Router, IndexRoute, Route, browserHistory } from 'react-router';
+import { Router, IndexRoute, Route, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import configureStore from './store/configureStore';
@@ -24,15 +24,17 @@ store.subscribe(() => {
 
 // If there's a search query parameter let's update the state on page load
 if (queryParameters.search)
-  store.dispatch({type: 'UPDATE_QUERY', query: queryParameters.search});
+  store.dispatch({ type: 'UPDATE_QUERY', query: queryParameters.search });
 
 render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={App} >
+    <Router history={hashHistory}>
+      <Route path="/" component={App}>
         <IndexRoute component={ListView} />
         <Route path="/about" component={AboutView} />
         <Route path="/map" component={MapView} />
       </Route>
     </Router>
-  </Provider>, document.getElementById('root'));
+  </Provider>,
+  document.getElementById('root')
+);
